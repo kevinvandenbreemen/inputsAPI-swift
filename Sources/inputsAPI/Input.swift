@@ -10,6 +10,8 @@ public protocol InputProviderStrategy {
 
 public class InputProviderImpl: InputProviderStrategy {
 
+    public init() {}
+
     public func getInput(_ message: String) -> Promise<String> {
         return Promise<String>(work: {[weak self] fulfill, reject in 
             if let strongSelf = self {
