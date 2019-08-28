@@ -1,6 +1,6 @@
 import Promise
 
-protocol InputProviderStrategy {
+public protocol InputProviderStrategy {
 
     func getInput(_ message: String) -> Promise<String>
 
@@ -8,9 +8,9 @@ protocol InputProviderStrategy {
 
 }
 
-class InputProviderImpl: InputProviderStrategy {
+public class InputProviderImpl: InputProviderStrategy {
 
-    func getInput(_ message: String) -> Promise<String> {
+    public func getInput(_ message: String) -> Promise<String> {
         return Promise<String>(work: {[weak self] fulfill, reject in 
             if let strongSelf = self {
                 fulfill( strongSelf.doInput(message) )
@@ -18,7 +18,7 @@ class InputProviderImpl: InputProviderStrategy {
         })
     }
 
-    func selectOption(_ message: String, choices: [String]) -> Promise<Int> {
+    public func selectOption(_ message: String, choices: [String]) -> Promise<Int> {
         return Promise<Int>(work: {[weak self] fulfill, reject in 
             if let strongSelf = self {
                 fulfill(strongSelf.doOptionSelect(message, choices: choices))
@@ -26,7 +26,7 @@ class InputProviderImpl: InputProviderStrategy {
         })
     }
 
-    fileprivate func doInput(_ message: String) -> String {
+    func doInput(_ message: String) -> String {
         print(message)
         guard let result = readLine() else {
             return doInput(message)
@@ -35,7 +35,7 @@ class InputProviderImpl: InputProviderStrategy {
         return result
     }
 
-    fileprivate func doOptionSelect(_ message: String, choices: [String]) -> Int {
+    func doOptionSelect(_ message: String, choices: [String]) -> Int {
 
         var selections = ""
         for (i, choice) in choices.enumerated() {
