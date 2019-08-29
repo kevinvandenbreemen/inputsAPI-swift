@@ -6,6 +6,8 @@ public protocol OutputProviderStrategy {
 
 public class OutputProviderImpl: OutputProviderStrategy {
 
+    public init() {}
+
     public func printLine(_ line : String) {
         print(line)
     }
