@@ -32,6 +32,6 @@ let package = Package(
         ),
         .testTarget(
             name: "inputsAPI-swiftTests",
-            dependencies: ["InputsAPI"]),
+            dependencies: ["InputsAPI", "OutputsAPI"]),
     ]
 )
