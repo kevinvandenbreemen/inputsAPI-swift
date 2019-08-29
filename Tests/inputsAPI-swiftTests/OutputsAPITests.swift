@@ -3,7 +3,7 @@ import XCTest
 
 final class OutputsAPITests: XCTestCase {
     func testExamplePrintString() {
-        let outputsAPI: OutputsAPI = OutputsAPIImpl()
+        let outputsAPI: OutputProviderStrategy = OutputProviderImpl()
         outputsAPI.printLine("Hello, this is a test")
     }
 

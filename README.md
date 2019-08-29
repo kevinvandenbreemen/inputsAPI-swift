@@ -25,6 +25,6 @@ input.selectOption("Pick One?", choices: choices).then{ selection in
 Be sure to import OutputsAPI
 
 ```
-        let outputsAPI: OutputsAPI = OutputsAPIImpl()
+        let outputsAPI: OutputProviderStrategy = OutputProviderImpl()
         outputsAPI.printLine("Hello, this is a test")
 ```

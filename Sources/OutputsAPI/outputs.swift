@@ -1,10 +1,10 @@
-public protocol OutputsAPI {
+public protocol OutputProviderStrategy {
 
     func printLine(_ line : String)
     
 }
 
-public class OutputsAPIImpl: OutputsAPI {
+public class OutputProviderImpl: OutputProviderStrategy {
 
     public func printLine(_ line : String) {
         print(line)
