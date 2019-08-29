@@ -10,6 +10,10 @@ let package = Package(
         .library(
             name: "InputsAPI",
             targets: ["InputsAPI"]),
+        .library(
+            name: "OutputsAPI",
+            targets: ["OutputsAPI"]
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -22,6 +26,9 @@ let package = Package(
             name: "InputsAPI",
             dependencies: ["Promise"],
             path: "Sources/inputsAPI"
+        ),
+        .target(
+            name: "OutputsAPI"
         ),
         .testTarget(
             name: "inputsAPI-swiftTests",
