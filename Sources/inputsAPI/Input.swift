@@ -1,6 +1,6 @@
 import Promise
 
-public protocol InputProviderStrategy {
+public protocol InputsAPI {
 
     func getInput(_ message: String) -> Promise<String>
 
@@ -8,7 +8,7 @@ public protocol InputProviderStrategy {
 
 }
 
-public class InputProviderImpl: InputProviderStrategy {
+public class InputsAPIImpl: InputsAPI {
 
     public init() {}
 

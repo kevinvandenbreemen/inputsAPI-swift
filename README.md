@@ -12,7 +12,7 @@ This is still a work in progress.
 Be sure to import InputsAPI
 
 ```
-let input: InputProviderStrategy = InputProviderImpl()  //  Currently default (and only) implementation is console input
+let input: InputsAPI = InputsAPIImpl()  //  Currently default (and only) implementation is console input
 
 let choices = ["Select A", "Select B", "Select C"]
 input.selectOption("Pick One?", choices: choices).then{ selection in 
@@ -25,6 +25,6 @@ input.selectOption("Pick One?", choices: choices).then{ selection in
 Be sure to import OutputsAPI
 
 ```
-        let outputsAPI: OutputProviderStrategy = OutputProviderImpl()
+        let outputsAPI: OutputsAPI = OutputsAPIImpl()
         outputsAPI.printLine("Hello, this is a test")
 ```
